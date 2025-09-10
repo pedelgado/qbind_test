@@ -6,7 +6,8 @@
     "autoload": {
         "psr-4": {
             "Pedro\\Qbind\\": "src/",
-            "Pedro\\Qbind\\app\\": "app/"
+            "Pedro\\Qbind\\app\\": "app/",
+            "Pedro\\Qbind\\config\\": "config/"
         }
     },
     "authors": [
@@ -17,6 +18,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "league/container": "5.x-dev"
+        "league/container": "5.x-dev",
+        "twig/twig": "4.x-dev"
     }
 }
