@@ -16,5 +16,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "league/container": "5.x-dev"
+    }
 }
