@@ -1,0 +1,20 @@
+{
+    "name": "pedro/qbind",
+    "description": "Qbind pre test exercise",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Pedro\\Qbind\\": "src/",
+            "Pedro\\Qbind\\app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Delgado",
+            "email": "pedro.delgado.alc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
