@@ -10,27 +10,28 @@
         <nav class="antialiased">
             <div class="mx-auto max-w-4xl px-8">
                 <div class="flex items-center justify-between">
-
-                           <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-                            <li>
-                                <a href="/" title="" class="flex text-sm font-medium text-white hover:text-primary-500">
-                                    List
-                                </a>
-                            </li>
-                            <li class="shrink-0">
-                                <a href="/upload" title="" class="flex text-sm font-medium text-white hover:text-primary-500">
-                                    Upload
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
+                    <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+                        <li>
+                            <a href="/" title="" class="flex text-sm font-medium text-white hover:text-primary-500">List</a>
+                        </li>
+                        <li>
+                            <a href="/add" title="" class="flex text-sm font-medium text-white hover:text-primary-500">Add</a>
+                        </li>
+                        <li class="shrink-0">
+                            <a href="/upload" title="" class="flex text-sm font-medium text-white hover:text-primary-500">Upload</a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </nav>
 
         <div class="mx-auto max-w-4xl px-8">
             <h1 class="my-10 text-4xl font-bold tracking-tight leading-none text-white">{{ title }}</h1>
+
+            {% if alert %}
+                {% include 'alert.html.twig' %}
+            {% endif %}
 
             {% block content %}{% endblock %}
         </div>
