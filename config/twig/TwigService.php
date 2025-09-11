@@ -13,9 +13,7 @@ class TwigService
     public function __construct()
     {
         $this->loader = new FilesystemLoader(__DIR__ . '/../../app/Views');
-        $this->twig = new Environment($this->loader, [
-            'cache' => __DIR__ . '/../../cache/twig',
-        ]);
+        $this->twig = new Environment($this->loader, []);
     }
 
     public function twig(): Environment
