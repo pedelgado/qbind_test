@@ -12,7 +12,7 @@ class UploadController
 
     public function __invoke(): void
     {
-        $template = $this->twigService->twig()->load('form.html.twig');
+        $template = $this->twigService->twig()->load('upload-form.html.twig');
         echo $template->render([
             "title" => "Upload VAT Numbers",
         ]);

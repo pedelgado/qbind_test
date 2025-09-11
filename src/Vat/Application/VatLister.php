@@ -5,7 +5,7 @@ namespace Pedro\Qbind\Vat\Application;
 use Pedro\Qbind\Vat\Domain\Vat;
 use Pedro\Qbind\Vat\Domain\VatRepository;
 
-readonly class VatNumbersLister
+readonly class VatLister
 {
     public function __construct(
         private VatRepository $vatRepository

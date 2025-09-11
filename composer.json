@@ -19,6 +19,8 @@
     "minimum-stability": "dev",
     "require": {
         "league/container": "5.x-dev",
-        "twig/twig": "4.x-dev"
+        "twig/twig": "4.x-dev",
+        "league/csv": "^9.24.1",
+        "ext-pdo": "*"
     }
 }

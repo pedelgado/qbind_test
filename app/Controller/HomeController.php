@@ -3,12 +3,12 @@
 namespace Pedro\Qbind\app\Controller;
 
 use Pedro\Qbind\config\twig\TwigService;
-use Pedro\Qbind\Vat\Application\VatNumbersLister;
+use Pedro\Qbind\Vat\Application\VatLister;
 
 class HomeController
 {
     public function __construct(
-        private readonly VatNumbersLister $vatNumbersLister,
+        private readonly VatLister   $vatNumbersLister,
         private readonly TwigService $twigService,
     ) {}
 
