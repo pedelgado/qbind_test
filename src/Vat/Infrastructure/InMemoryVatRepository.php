@@ -4,11 +4,21 @@ namespace Pedro\Qbind\Vat\Infrastructure;
 
 use Pedro\Qbind\Vat\Domain\Vat;
 use Pedro\Qbind\Vat\Domain\VatCollection;
-use Pedro\Qbind\vat\domain\VatRepository;
+use Pedro\Qbind\Vat\Domain\VatNumber;
+use Pedro\Qbind\Vat\Domain\VatRepository;
 
 class InMemoryVatRepository implements VatRepository
 {
-    private array $vat_items;
+    private array $vat_items = [];
+
+    public function __construct()
+    {
+        $this->vat_items = [
+            new Vat(
+                new VatNumber("test")
+            )
+        ];
+    }
 
     public function save(Vat $vat): void
     {

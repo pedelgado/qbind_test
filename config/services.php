@@ -10,7 +10,7 @@ $container->add(\Pedro\Qbind\app\Controller\HomeController::class)
 $container->add(\Pedro\Qbind\app\Controller\UploadController::class)
     ->addArgument(\Pedro\Qbind\config\twig\TwigService::class);
 
-// Services
+// Config classes
 $container->add(\Pedro\Qbind\config\twig\TwigService::class);
 
 // Src

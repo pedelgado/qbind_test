@@ -17,20 +17,20 @@ $container = require '../config/services.php';
  * Very simplistic front controller
  */
 
-// Get URI
+// Get path
 $request = $_SERVER['REQUEST_URI'];
-$uri = parse_url($request, PHP_URL_PATH);
-$uri  = trim($uri, '/');
+$path = parse_url($request, PHP_URL_PATH);
+$path  = trim($path, '/');
 
 // Default route
-if ($uri === '') {
-    $uri = 'home';
+if ($path === '') {
+    $path = 'home';
 }
 
-// Build controller name
-$controllerClass = 'Pedro\Qbind\app\Controller\\' . ucfirst($uri) . 'Controller';
+// Build controller name based of the path
+$controllerClass = 'Pedro\Qbind\app\Controller\\' . ucfirst($path) . 'Controller';
 
-// Invoke controller
+// Try to invoke controller
 if (class_exists($controllerClass)) {
     $controller = $container->get($controllerClass);
     $controller();
