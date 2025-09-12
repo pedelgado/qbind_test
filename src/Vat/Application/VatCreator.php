@@ -12,10 +12,10 @@ readonly class VatCreator
         private VatRepository $vatRepository
     ) {}
 
-    public function __invoke(string $vatNumber): void
+    public function __invoke(string $id, string $vatNumber): void
     {
         $vatNumber = VatNumber::create($vatNumber);
-        $vat = new Vat($vatNumber);
+        $vat = new Vat($id, $vatNumber);
         $this->vatRepository->save($vat);
     }
 }

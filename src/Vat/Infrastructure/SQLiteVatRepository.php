@@ -33,7 +33,7 @@ class SQLiteVatRepository implements VatRepository
                 vat_number = excluded.vat_number
         ");
         $stmt->execute([
-            ':id' => rand(),
+            ':id' => $vat->id(),
             ':vat_number' => $vat->vatNumber()
         ]);
     }
@@ -43,8 +43,9 @@ class SQLiteVatRepository implements VatRepository
         $vats = [];
 
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $vatId = $row['id'];
             $vatNumber = VatNumber::create($row['vat_number']);
-            $vats[] = new Vat($vatNumber);
+            $vats[] = new Vat($vatId, $vatNumber);
         }
 
         return new VatCollection($vats);

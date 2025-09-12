@@ -30,12 +30,10 @@ final class CheckController extends BaseController
             }
         }
 
-        var_dump($this->alert()?->type()->name);
-
         // Render template
         $template = $this->twigService->twig()->load('check-form.html.twig');
         echo $template->render([
-            "title" => "Add VAT Number",
+            "title" => "VAT Number Checker",
             "value" => $_POST["vat_number"] ?? "",
             "alert" => $this->alert()?->message(),
             "alertType" => $this->alert()?->type()->name
