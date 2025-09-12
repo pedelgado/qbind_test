@@ -4,7 +4,7 @@ namespace Pedro\Qbind\app\Controller;
 
 use Pedro\Qbind\config\twig\TwigService;
 
-class UploadController
+final class UploadController extends BaseController
 {
     public function __construct(
         private readonly TwigService $twigService,
