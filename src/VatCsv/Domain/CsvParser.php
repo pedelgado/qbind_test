@@ -4,5 +4,5 @@ namespace Pedro\Qbind\VatCsv\Domain;
 
 interface CsvParser
 {
-    public function parse();
+    public function parse(string $csvPath): array;
 }

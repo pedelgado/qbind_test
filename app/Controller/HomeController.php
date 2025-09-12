@@ -8,7 +8,7 @@ use Pedro\Qbind\Vat\Application\VatLister;
 final class HomeController extends BaseController
 {
     public function __construct(
-        private readonly VatLister   $vatNumbersLister,
+        private readonly VatLister $vatNumbersLister,
         private readonly TwigService $twigService,
     ) {}
 

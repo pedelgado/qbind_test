@@ -3,6 +3,7 @@
 namespace Pedro\Qbind\Vat\Application;
 
 use Pedro\Qbind\Vat\Domain\Vat;
+use Pedro\Qbind\Vat\Domain\VatNumber;
 use Pedro\Qbind\Vat\Domain\VatRepository;
 
 readonly class VatLister
@@ -17,7 +18,9 @@ readonly class VatLister
 
         return array_map(
             fn (Vat $vat) => [
-                "value" => $vat->vatNumber()
+                "original" => $vat->vatNumber(),
+                "valid" => VatNumber::isValid($vat->vatNumber()),
+                "fixable" => VatNumber::isFixable($vat->vatNumber()),
             ],
             iterator_to_array($vatCollection)
         );

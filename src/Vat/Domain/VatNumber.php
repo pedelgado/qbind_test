@@ -15,15 +15,10 @@ class VatNumber extends StringValueObject
     // Named constructor
     public static function create(string $vatNumber): self
     {
-        // Guard statement
-        if (!self::isValid($vatNumber)) {
-            throw new RuntimeException("Invalid VAT number format");
-        }
-
         return new self($vatNumber);
     }
 
-    public static function isValid(string $vatNumber): bool
+    static public function isValid(string $vatNumber): bool
     {
         $pattern = '/^(IT)?\d{11}$/';
 
@@ -34,8 +29,13 @@ class VatNumber extends StringValueObject
         return false;
     }
 
-    public function hasPrefix(): bool
+    static public function hasPrefix(string $vatNumber): bool
     {
-        return preg_match('/^IT/', $this->value()) === 1;
+        return preg_match('/^IT/', $vatNumber) === 1;
+    }
+
+    static public function isFixable(string $vatNumber): bool
+    {
+        return self::isValid($vatNumber) && !self::hasPrefix($vatNumber);
     }
 }

@@ -8,19 +8,35 @@
         </div>
 
         {% if items %}
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-10">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-400">
                     <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Value
+                            Original
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Corrected
+                        </th><th scope="col" class="px-6 py-3">
+                            State
                         </th>
                     </tr>
                     <tbody>
                         {% for item in items %}
                             <tr class="bg-gray-800 border-gray-700 hover:bg-gray-600 {% if not loop.last %} border-b {% endif %}">
                                 <td class="px-6 py-4">
-                                    {{ item.value }}
+                                    {{ item.original }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {% if item.fixable %} IT{{ item.original }}
+                                    {% else %}N/A
+                                    {% endif %}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {% if not item.valid %}<strong class="text-red-400"> Invalid</strong>
+                                    {% elseif item.fixable %} <strong class="text-yellow-400">Fixed</strong>
+                                    {% else %}<strong class="text-green-400">Valid</strong>
+                                    {% endif %}
                                 </td>
                             </tr>
                         {% endfor  %}
@@ -28,7 +44,7 @@
                 </table>
             </div>
         {% else %}
-            <div class="bg-gray-800 p-5 rounded-lg border-dashed border-1 border-gray-500">
+            <div class="bg-gray-800 p-5 rounded-lg">
                 <p class="text-gray-400 italic">
                     No items yet
                 </p>

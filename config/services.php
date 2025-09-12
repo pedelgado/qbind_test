@@ -13,8 +13,12 @@ $container->add(\Pedro\Qbind\Vat\Application\VatLister::class)
 
 $container->add(\Pedro\Qbind\Vat\Application\VatChecker::class);
 
+$container->add(\Pedro\Qbind\VatCsv\Application\VatParser::class)
+    ->addArgument(\Pedro\Qbind\VatCsv\Domain\CsvParser::class);
+
 // Domain services
 $container->add(\Pedro\Qbind\Vat\Domain\VatRepository::class, \Pedro\Qbind\Vat\Infrastructure\SQLiteVatRepository::class);
+$container->add(\Pedro\Qbind\VatCsv\Domain\CsvParser::class, \Pedro\Qbind\VatCsv\Infrastructure\LeagueCsvParser::class);
 
 // Controller services
 $container->add(\Pedro\Qbind\app\Controller\HomeController::class)
@@ -22,6 +26,8 @@ $container->add(\Pedro\Qbind\app\Controller\HomeController::class)
     ->addArgument(\Pedro\Qbind\config\twig\TwigService::class);
 
 $container->add(\Pedro\Qbind\app\Controller\UploadController::class)
+    ->addArgument(\Pedro\Qbind\VatCsv\Application\VatParser::class)
+    ->addArgument(\Pedro\Qbind\Vat\Application\VatCreator::class)
     ->addArgument(\Pedro\Qbind\config\twig\TwigService::class);
 
 $container->add(\Pedro\Qbind\app\Controller\CheckController::class)
