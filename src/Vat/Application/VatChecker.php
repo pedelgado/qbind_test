@@ -9,9 +9,12 @@ readonly class VatChecker
 
     public function __invoke(string $vatNumber): array
     {
+        $valid = VatNumber::isValid($vatNumber);
+        $hasPrefix = VatNumber::hasPrefix($vatNumber);
+
         return [
-            'valid' => VatNumber::isValid($vatNumber),
-            'fixable' => !VatNumber::hasPrefix($vatNumber),
+            'valid' => $valid,
+            'fixable' => $valid && !$hasPrefix,
         ];
     }
 }

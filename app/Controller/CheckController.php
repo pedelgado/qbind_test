@@ -5,7 +5,6 @@ namespace Pedro\Qbind\app\Controller;
 use Pedro\Qbind\app\util\AlertType;
 use Pedro\Qbind\config\twig\TwigService;
 use Pedro\Qbind\Vat\Application\VatChecker;
-use RuntimeException;
 
 final class CheckController extends BaseController
 {

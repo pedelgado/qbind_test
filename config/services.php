@@ -1,7 +1,5 @@
 <?php
 
-use Pedro\Qbind\Vat\Domain\VatRepository;
-
 $container = new League\Container\Container();
 
 // Use case services
