@@ -1,4 +1,4 @@
-# Qbind Firt Test
+# Qbind Test
 
 This is a test repository for Qbind first test.
 
