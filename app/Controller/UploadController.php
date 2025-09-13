@@ -19,7 +19,6 @@ final class UploadController extends BaseController
     {
         if (isset($_FILES['vat_file'])) {
             $extension = strtolower(pathinfo($_FILES['vat_file']['name'], PATHINFO_EXTENSION));
-            var_dump($extension);
 
             // Check file format is CSV
             if ($extension != 'csv') {
