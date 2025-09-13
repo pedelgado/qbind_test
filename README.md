@@ -42,14 +42,17 @@ organization and maintainability.
 Contains mainly the entry point of the application. This entry point acts as a basic **front controller**, routing
 all incoming requests to proper controller. It also loads the services container.
 
-### App folder
-
-Contains all the files that are not related to business logic. Commonly the files that would be coupled to a framework.
-Controllers are decoupled from other layers through dependency injection.
-
 ### Src folder
 
 Src folder is divided in modules. Each module spits the code in application, domain and infrastructure layers;
 following the principles of Domain-Driven Design (DDD) and Hexagonal Architecture. It makes use of other lighter patterns
 like Repository, value objects and named constructors, along with others.
+
+### App folder
+
+Contains all the files that are not related to business logic. Commonly the files that would be coupled to a framework.
+Controllers are decoupled from other layers through dependency injection.
+
+Views and theming is strictly contained in app/views folder. For agility, twig (PHP template engine) and tailwind
+(css framework) has been used.
 
