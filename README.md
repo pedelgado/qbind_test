@@ -1,6 +1,6 @@
-# Qbind Firt Test
+# Qbind Test
 
-This is a test repository for Qbind first test.
+Repository for Qbind first test.
 
 ## Installation
 
@@ -50,5 +50,6 @@ Controllers are decoupled from other layers through dependency injection.
 ### Src folder
 
 Src folder is divided in modules. Each module spits the code in application, domain and infrastructure layers;
-following the principles of Domain-Driven Design (DDD) and Hexagonal Architecture.
+following the principles of Domain-Driven Design (DDD) and Hexagonal Architecture. It makes use of other lighter patterns
+like Repository, value objects and named constructors, along with others.
 
