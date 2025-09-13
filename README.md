@@ -7,7 +7,7 @@ Repository for Qbind first test.
 To ease testing under XAMPP environment take the already built release (app.zip) and place project folder under
 XAMPP htdocs folder.
 
-- [Release v1.0](https://github.com/pedelgado/qbind_test/releases/tag/v1.0)
+- [Release v1.1](https://github.com/pedelgado/qbind_test/releases/tag/v1.1)
 
 Application includes configuration files for DDEV development environment. To start the DDEV environment, run:
 ```
