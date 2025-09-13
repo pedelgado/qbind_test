@@ -18,9 +18,11 @@ final class UploadController extends BaseController
     public function __invoke(): void
     {
         if (isset($_FILES['vat_file'])) {
+            $extension = strtolower(pathinfo($_FILES['vat_file']['name'], PATHINFO_EXTENSION));
+            var_dump($extension);
 
             // Check file format is CSV
-            if ($_FILES['vat_file']['type'] !== 'text/csv') {
+            if ($extension != 'csv') {
                 $this->addAlert(AlertType::ERROR, "Invalid file format. Please upload a CSV file.");
             } else {
                 // Process the uploaded file

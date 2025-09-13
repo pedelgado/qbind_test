@@ -9,7 +9,7 @@
             "email": "pedro.delgado.alc@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "scripts": {
         "test": "phpunit"
     },
@@ -27,12 +27,13 @@
     },
 
     "require": {
-        "league/container": "5.x-dev",
-        "twig/twig": "4.x-dev",
+        "php": "^8.2",
+        "league/container": "^5.1",
+        "twig/twig": "^3.21",
         "league/csv": "^9.24.1",
         "ext-pdo": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^12.4@dev"
+        "phpunit/phpunit": "^11.5"
     }
 }

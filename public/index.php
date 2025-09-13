@@ -20,7 +20,8 @@ $container = require '../config/services.php';
 // Get path
 $request = $_SERVER['REQUEST_URI'];
 $path = parse_url($request, PHP_URL_PATH);
-$path  = trim($path, '/');
+$path = explode("/", $path);
+$path = end($path);
 
 // Default route
 if ($path === '') {
